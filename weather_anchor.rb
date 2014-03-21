@@ -49,7 +49,9 @@ class WeatherAnchor
   end
 
   def generate_tweet
-    weather_description + " " + tweet_description
+    description = weather_status + " " + tweet_description
+    description += " Дува ветар со брзина од #{wind_speed}m/s." if wind_speed >= 1.0
+    return description
   end
 
   def tweet!
@@ -62,15 +64,19 @@ class WeatherAnchor
     (kelvin - 273.15).round(0)
   end
 
+  def wind_speed
+    @json["wind"]["speed"]
+  end
+
   def id_code
     @json["weather"][0]["id"]
   end
 
-  def weather_description
+  def weather_status
     code = CODES.detect do |code, desc|
       code == id_code
     end
-    "Моментално надвор #{code.last}"
+    description = "Моментално надвор #{code.last}"
   end
 
   def tweet_description
