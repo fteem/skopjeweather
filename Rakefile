@@ -7,14 +7,15 @@ require 'twitter'
 require 'json'
 require 'net/http'
 
-def convert(farenheit)
-  ((farenheit - 32) * 5/9).round(0)
+def convert(kelvin)
+  (kelvin - 273.15).round(0)
 end
 
 task :update do
-  uri = URI("https://api.forecast.io/forecast/be48af43dc14167188e50f22a55db05f/42.0000,21.4333")
+  uri = URI("http://api.openweathermap.org/data/2.5/weather?q=Skopje,mk")
   json = JSON.parse(Net::HTTP.get(uri))
-  temperature = convert(json['currently']["temperature"])
+
+  temperature = convert(json["main"]["temp"])
 
   tweet_content = case temperature
                   when -100..-20
