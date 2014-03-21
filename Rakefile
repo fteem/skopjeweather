@@ -15,7 +15,6 @@ task :update do
   uri = URI("https://api.forecast.io/forecast/be48af43dc14167188e50f22a55db05f/42.0000,21.4333")
   json = JSON.parse(Net::HTTP.get(uri))
   temperature = convert(json['currently']["temperature"])
-  puts json['currently']
 
   tweet_content = case temperature
                   when -100..-20
@@ -23,15 +22,15 @@ task :update do
                   when -19..-10
                     "#{temperature} степени, грч ладно."
                   when -9..0
-                    "Многу ладно. #{temperature} степени."
+                    "Брррр... ладно. #{temperature} степени."
                   when 1..10
-                    "Свежичко, #{temperature}тина степени"
+                    "Свежo e, #{temperature} степени."
                   when 11..20
-                    "Пријатно. #{temperature} степени"
+                    "Пријатно е. #{temperature} степени."
                   when 21..25
-                    "#{temperature} степени, oдлично e!"
+                    "#{temperature} степени, закон!"
                   when 26..35
-                    "Топлоooo. (#{temperature} степени)"
+                    "Топлоooo... (#{temperature} степени)"
                   when 36..42
                     "Мнооогу топло! Фаќа накај 40ка..."
                   when 42..100
