@@ -7,6 +7,6 @@ require 'net/http'
 require './weather_anchor.rb'
 
 
-task :update do
+task :weather do
   WeatherAnchor.update!
 end
