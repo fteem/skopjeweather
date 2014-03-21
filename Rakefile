@@ -39,10 +39,10 @@ task :update do
                   end
 
   twitter_client = Twitter::REST::Client.new do |config|
-    config.consumer_key        = "0r0kNvoecSKgdrlDXHYw"
-    config.consumer_secret     = "DBtCxX9Lf9gRYaCU4hdcZChufAqtwiaPVrbQZUdbU"
-    config.access_token        = "2400637903-YbCFWKtfUbo3ta7EBinwVnNEEIWaaskQoGTJy4h"
-    config.access_token_secret = "KShlsu4UYGQQP83en0aAXpB7zNq09NulGIfQ4a9RdrBVf"
+    config.consumer_key        = ENV['TWITTER_CONSUMER_KEY']
+    config.consumer_secret     = ENV['TWITTER_CONSUMER_SECRET']
+    config.access_token        = ENV['TWITTER_ACCESS_TOKEN']
+    config.access_token_secret = ENV['TWITTER_ACCESS_TOKEN_SECRET']
   end
 
   twitter_client.update(tweet_content)
