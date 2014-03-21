@@ -83,7 +83,9 @@ class WeatherAnchor
       "Брррр... ладно! Температурата е #{temperature} степени."
     when 1..10
       "Свежo e, со температура од #{temperature} степени."
-    when 11..20
+    when 10..15
+      "Малку свежо е, со температура од #{temperature} степени."
+    when 16..20
       "Пријатно е, со температура од #{temperature} степени."
     when 21..25
       "#{temperature} степени, топ еј!"
