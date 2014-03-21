@@ -25,7 +25,7 @@ task :update do
                   when -9..0
                     "Многу ладно. #{temperature} степени."
                   when 1..10
-                    "Свежичко, #{temperature} степени"
+                    "Свежичко, #{temperature}тина степени"
                   when 11..20
                     "Пријатно. #{temperature} степени"
                   when 21..25
