@@ -54,7 +54,6 @@ class WeatherAnchor
 
   def tweet!
     @twitter_client.update(generate_tweet)
-    puts "Posted to Twitter: #{generate_tweet}"
   end
 
   private
