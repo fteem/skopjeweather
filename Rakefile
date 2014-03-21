@@ -44,4 +44,5 @@ task :update do
   end
 
   twitter_client.update(tweet_content)
+  puts "Posted to Twitter: #{tweet_content}"
 end
