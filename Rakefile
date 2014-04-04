@@ -5,6 +5,7 @@ require 'twitter'
 require 'json'
 require 'net/http'
 require './weather_anchor.rb'
+require './beaufort_scale.rb'
 
 
 task :weather do
