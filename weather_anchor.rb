@@ -33,28 +33,21 @@ class WeatherAnchor
 
   class << self
     def update!
-      anchor = new
-      anchor.tweet!
+      new.present!
     end
   end
 
   def initialize
     @json = JSON.parse(Net::HTTP.get(WEATHER_URI))
-    @twitter_client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = ENV['TWITTER_CONSUMER_KEY']
-      config.consumer_secret     = ENV['TWITTER_CONSUMER_SECRET']
-      config.access_token        = ENV['TWITTER_ACCESS_TOKEN']
-      config.access_token_secret = ENV['TWITTER_ACCESS_TOKEN_SECRET']
-    end
   end
 
-  def generate_tweet
+  def present!
+    Tweeter.tweet_it!(speech)
+  end
+
+  def speech
     description = weather_status + " " + tweet_description + '. ' + wind_description
     return description
-  end
-
-  def tweet!
-    @twitter_client.update(generate_tweet)
   end
 
   private

@@ -6,6 +6,7 @@ require 'json'
 require 'net/http'
 require './weather_anchor.rb'
 require './beaufort_scale.rb'
+require './tweeter.rb'
 
 
 task :weather do
