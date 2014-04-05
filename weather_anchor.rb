@@ -90,7 +90,11 @@ class WeatherAnchor
     when 16..20
       "Пријатно е, со температура од #{temperature} степени."
     when 21..25
-      "#{temperature} степени, топ!"
+      if wind_speed < 3.0
+        "#{temperature} степени, времево си грми за на кафе!"
+      else
+        "#{temperature} степени, топ!"
+      end
     when 26..35
       "Топлоooo... (#{temperature} степени)"
     when 36..42
