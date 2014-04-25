@@ -13,7 +13,7 @@ class BeaufortScale
   def describe
     case @wind_speed
     when 0..1.5
-      "и ветар нема."
+      ""
     when 1.6..3.4
       "Си дувка малкуцка."
     when 3.5..5.4
