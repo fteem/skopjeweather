@@ -91,7 +91,11 @@ class WeatherAnchor
       "Пријатно е, со температура од #{temperature} степени."
     when 21..25
       if wind_speed < 3.0
-        "#{temperature} степени, времево си грми за на кафе!"
+        if Time.now.hour > 21 || Time.now.hour < 7
+          "#{temperature} степени, времево си грми за стискавац на некоја клупа!"
+        else
+          "#{temperature} степени, времево си грми за на кафе!"
+        end
       else
         "#{temperature} степени, топ!"
       end
