@@ -46,7 +46,7 @@ class WeatherAnchor
   end
 
   def speech
-    description = "Шо има веза дали е ладно или топло, марш сите надвор на #СтудентскиМарш !"
+    description = weather_status + " " + tweet_description + '. ' + wind_description
     return description
   end
 
