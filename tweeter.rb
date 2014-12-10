@@ -18,7 +18,7 @@ class Tweeter
 
   def tweet_it!
     puts "Tweeted: #{@tweet}"
-    # @twitter_client.update(@tweet)
+    @twitter_client.update(@tweet)
   end
 
 end
