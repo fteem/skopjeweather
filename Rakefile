@@ -12,3 +12,7 @@ require './tweeter.rb'
 task :weather do
   WeatherAnchor.update!
 end
+
+task :say, :arg1 do |t, arg|
+  Tweeter.tweet_it! arg[:arg1]
+end

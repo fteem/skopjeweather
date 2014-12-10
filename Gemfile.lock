@@ -15,6 +15,7 @@ GEM
       thread_safe (~> 0.2.0)
     multipart-post (2.0.0)
     naught (1.0.0)
+    rake (10.4.2)
     simple_oauth (0.2.0)
     thread_safe (0.2.0)
       atomic (>= 1.1.7, < 2)
@@ -34,4 +35,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  rake
   twitter
